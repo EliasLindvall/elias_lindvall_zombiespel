@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="index_style.css">
+
+    <title>Zombie spel lätt</title>
+</head>
+<body>
+
+<script src="https://koda.nu/simple.js">
+
+  var zombies = [];
+  
+  var i = 0;
+  
+  while (i < 20)
+  {
+   zombies.push({x: random(totalWidth),
+                y: random(totalHeight),
+                speed: random(1,5)});
+    i+=1
+  }
+  
+  var zombie = {x: random(totalWidth),
+                y: random(totalHeight),
+                speed: random(1,5)};
+  
+  function update()
+  {
+  	clearScreen();
+    
+    if (keyboard.space) 
+ 	    var randomColor = '#'+Math.floor(Math.random()*16777215).toString(16);
+     fill(randomColor);
+
+    var i = 0;
+    
+    while (i < 20)
+    {
+    	var zombie = zombies[i];
+    	picture(zombie.x, zombie.y, "zombie2.png");
+    
+    	if (zombie.x < mouse.x)
+    	zombie.x += zombie.speed;
+    	else
+      	zombie.x -= zombie.speed;
+    	
+        if (zombie.y < mouse.y)
+    	zombie.y += zombie.speed;
+    	else
+      	zombie.y -= zombie.speed;
+    
+    	if (distance(mouse, zombie) < 5)
+    {
+    	alert("Game over :(");
+    	stopUpdate();
+    }
+     i +=1
+    }
+  }
+  
+  
+  
+</script>
+
+
+
+
+
+</body>
+</html>
