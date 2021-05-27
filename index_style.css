@@ -33,7 +33,7 @@ p {
     position: relative;
     left: 1000px;
     border-radius: 20px;
-    background-color: rgba(73, 71, 71, 0.432);
+    background-color: rgba(73, 71, 71, 0.5);
 }
 
 .button-hard {
@@ -41,7 +41,14 @@ p {
     left: 445px;
     top: 235px;
     border-radius: 20px;
-    background-color: rgba(73, 71, 71, 0.432);
+    background-color: rgba(73, 71, 71, 0.5);
 }
 
+.button-easy:hover {
+    transform: scale(1.1);
+}
+
+.button-hard:hover {
+    transform: scale(1.1);
+}
 
